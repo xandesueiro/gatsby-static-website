@@ -9,6 +9,28 @@
 
 ## 🚀 Quick start
 
+0. **Pre req**
+
+    Install Gitbash
+	  Install Nodejs
+    Tutorial for windows
+    ```
+    https://nodejs.org/en/download/
+    ```
+    Install surge.sh
+    ```
+    cd /static-site/public
+    npm install surge.sh
+    ```
+
+    ```
+    node -v
+    npm -v
+    npm install npm --global
+    npm -v
+    python --version
+  ```
+
 1.  **Create a Gatsby site.**
 
     Use the Gatsby CLI to create a new site, specifying the minimal starter.
