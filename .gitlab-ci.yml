@@ -28,6 +28,7 @@ test artifact:
   stage: test
   script:
     - grep -q "Gatsby" ./public/index.html
+  cache: {}
 
 test website:
   stage: test
@@ -49,3 +50,4 @@ deploy tests:
   script:
     - curl "https://xande755.surge.sh" | tac | tac | grep -q "Alex"
     - curl -s "https://xande755.surge.sh" | grep -q "$CI_COMMIT_SHORT_SHA"
+  cache: {}
