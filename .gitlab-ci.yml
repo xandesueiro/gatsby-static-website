@@ -4,6 +4,7 @@ stages:
   - build
   - test
   - deploy
+  - deploy-tests
 
 build website:
   stage: build
@@ -34,4 +35,9 @@ deploy to surge:
   stage: deploy
   script:
     - npm install --global surge
-    - surge --project ./public --domain xande752.surge.sh
+    - surge --project ./public --domain xande753.surge.sh
+
+deploy tests:
+  stage: deploy-tests
+  script:
+    - curl "xande753.surge.sh" | tac | tac | grep -q "Alex"
