@@ -34,4 +34,4 @@ deploy to surge:
   stage: deploy
   script:
     - npm install --global surge
-    - surge --project ./public --domain xande751.surge.sh
+    - surge --project ./public --domain xande752.surge.sh
