@@ -38,8 +38,6 @@ deploy to surge:
     - surge --project ./public --domain xande755.surge.sh
 
 deploy tests:
-  image: alpine
   stage: deploy-tests
   script:
-    - apk --no-cache add curl
-    - curl -s "xande755.surge.sh" | grep -q "Alex"
+    - curl "xande755.surge.sh" | tac | tac | grep -q "Alex"
