@@ -6,12 +6,19 @@ stages:
   - deploy
   - deploy-tests
 
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
 build website:
   stage: build
   script:
+    - echo $CI_COMMIT_SHORT_SHA
     - npm install
     - npm install -g gatsby-cli
     - gatsby build
+    - sed -i "s/%%VERSION%%/$CI_COMMIT_SHORT_SHA/" ./public/index.html
   artifacts:
     paths:
       - ./public
@@ -40,4 +47,5 @@ deploy to surge:
 deploy tests:
   stage: deploy-tests
   script:
-    - curl "xande755.surge.sh" | tac | tac | grep -q "Alex"
+    - curl "https://xande755.surge.sh" | tac | tac | grep -q "Alex"
+    - curl -s "https://xande755.surge.sh" | grep -q "$CI_COMMIT_SHORT_SHA"
