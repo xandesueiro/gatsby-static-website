@@ -12,6 +12,10 @@ cache:
   paths:
     - node_modules/
 
+variables:
+  STAGING_DOMAIN: xande755-staging.surge.sh
+  PRODUCTION_DOMAIN: xande755.surge.sh
+
 build website:
   stage: build
   script:
@@ -44,19 +48,19 @@ deploy staging:
   stage: deploy-staging
   environment:
     name: staging
-    url: https://xande755-staging.surge.sh
+    url: https://$STAGING_DOMAIN
   script:
     - npm install --global surge
-    - surge --project ./public --domain xande755-staging.surge.sh
+    - surge --project ./public --domain $STAGING_DOMAIN
 
 deploy to production: 
   stage: deploy-production
   environment:
     name: production
-    url: https://xande755.surge.sh
+    url: https://$PRODUCTION_DOMAIN
   script:
     - npm install --global surge
-    - surge --project ./public --domain xande755.surge.sh
+    - surge --project ./public --domain $PRODUCTION_DOMAIN
 
 deploy to produbction tests:
   stage: production-tests
