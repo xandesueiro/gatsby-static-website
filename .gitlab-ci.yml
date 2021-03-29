@@ -35,9 +35,11 @@ deploy to surge:
   stage: deploy
   script:
     - npm install --global surge
-    - surge --project ./public --domain xande754.surge.sh
+    - surge --project ./public --domain xande755.surge.sh
 
 deploy tests:
+  image: alpine
   stage: deploy-tests
   script:
-    - curl "xande754.surge.sh" | tac | tac | grep -q "Alex"
+    - apk --no-cache add curl
+    - curl -s "xande755.surge.sh" | grep -q "Alex"
