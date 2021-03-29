@@ -39,5 +39,6 @@ deploy to surge:
 
 deploy tests:
   stage: deploy-tests
+  image: alpine
   script:
     - curl "xande753.surge.sh" | tac | tac | grep -q "Alex"
