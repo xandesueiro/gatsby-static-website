@@ -66,6 +66,7 @@ deploy staging:
     - master
   script:
     - echo $CI_ENVIRONMENT_SLUG.
+    - echo $CI_COMMIT_REF_NAME
     - npm install --global surge
     - surge --project ./public --domain $STAGING_DOMAIN
 
