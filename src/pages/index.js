@@ -141,6 +141,9 @@ const IndexPage = () => {
       <h2 style={headingStyles}>
       It's really great! Good work.
       </h2>
+      <p style={paragraphStyles}>
+        Training pipeline CI/CD using GITLAB
+      </p>
       <div>Pipeline Version: %%VERSION%%</div>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
