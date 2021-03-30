@@ -56,6 +56,7 @@ test website:
 #    - npm install --global surge
 #    - surge --project ./public --domain xande755-$CI_ENVIRONMENT_SLUG.surge.sh
 
+
 deploy staging: 
   stage: deploy-staging
   environment:
