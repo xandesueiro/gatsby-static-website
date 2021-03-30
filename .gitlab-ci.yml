@@ -3,11 +3,7 @@ image: node
 stages:
   - build
   - test
-<<<<<<< HEAD
 #  - deploy-review
-=======
-  - deploy-review
->>>>>>> 00e3c3c973021b8ed7139b1dbf5e72607cf0a144
   - deploy-staging
   - deploy-production
   - production-tests
