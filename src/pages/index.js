@@ -144,6 +144,9 @@ const IndexPage = () => {
       <p style={paragraphStyles}>
         Training pipeline CI/CD using GITLAB. Any text to test!
       </p>
+      <p style={paragraphStyles}>
+        I am Alex from Brazil, a crazy country
+      </p>
       <div>Pipeline Version: %%VERSION%%</div>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
