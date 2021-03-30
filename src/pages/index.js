@@ -142,7 +142,7 @@ const IndexPage = () => {
       It's really great! Good work.
       </h2>
       <p style={paragraphStyles}>
-        Training pipeline CI/CD using GITLAB
+        Training pipeline CI/CD using GITLAB. Any text to test!
       </p>
       <div>Pipeline Version: %%VERSION%%</div>
       <p style={paragraphStyles}>
