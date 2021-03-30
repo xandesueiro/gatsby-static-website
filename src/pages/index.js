@@ -138,6 +138,9 @@ const IndexPage = () => {
           🎉🎉🎉
         </span>
       </h1>
+      <h2 style={headingStyles}>
+      It's really great!
+      </h2>
       <div>Pipeline Version: %%VERSION%%</div>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
