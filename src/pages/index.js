@@ -139,7 +139,7 @@ const IndexPage = () => {
         </span>
       </h1>
       <h2 style={headingStyles}>
-      It's really great!
+      It's really great! Good work.
       </h2>
       <div>Pipeline Version: %%VERSION%%</div>
       <p style={paragraphStyles}>
