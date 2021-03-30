@@ -49,6 +49,8 @@ deploy staging:
   environment:
     name: staging
     url: https://$STAGING_DOMAIN
+  only:
+    - master
   script:
     - npm install --global surge
     - surge --project ./public --domain $STAGING_DOMAIN
@@ -58,6 +60,8 @@ deploy to production:
   environment:
     name: production
     url: https://$PRODUCTION_DOMAIN
+  only:
+    - master    
   when: manual
   allow_failure: false
   script:
@@ -66,6 +70,8 @@ deploy to production:
 
 deploy to produbction tests:
   stage: production-tests
+  only:
+    - master  
   script:
     - curl "https://xande755.surge.sh" | tac | tac | grep -q "Alex"
     - curl -s "https://xande755.surge.sh" | grep -q "$CI_COMMIT_SHORT_SHA"
