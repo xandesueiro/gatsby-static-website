@@ -3,7 +3,6 @@ image: node
 stages:
   - build
   - test
-  - deploy-review
   - deploy-staging
   - deploy-production
   - production-tests
@@ -45,17 +44,6 @@ test website:
     - sleep 10
     - curl "http://localhost:9000" | tac | tac | grep -q "Gatsby"
 
-deploy review: 
-  stage: deploy-review
-  environment:
-    name: review/$CI_COMMIT_REF_NAME
-    url: https://xande755-$CI_ENVIRONMENT_SLUG.surge.sh
-  only:
-    - merge_requests
-  script:
-    - npm install --global surge
-    - surge --project ./public --domain xande755-$CI_ENVIRONMENT_SLUG.surge.sh
-
 deploy staging: 
   stage: deploy-staging
   environment:
@@ -64,8 +52,6 @@ deploy staging:
   only:
     - master
   script:
-    - echo $CI_ENVIRONMENT_SLUG.
-    - echo $CI_COMMIT_REF_NAME
     - npm install --global surge
     - surge --project ./public --domain $STAGING_DOMAIN
 
