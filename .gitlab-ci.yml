@@ -54,6 +54,9 @@ deploy pre production:
   script:
     - npm install --global surge
     - surge --project ./public --domain $PREPROD_DOMAIN
+  artifacts:
+    paths:
+      - ./public
 
 deploy to production: 
   stage: deploy-production
