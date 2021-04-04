@@ -76,9 +76,13 @@ deploy to production:
   before_script:
     - pip3 install awscli --upgrade  
   script:
+    - npm install
     - npm i gatsby-plugin-s3
     - npm run build
     - npm run deploy
+  artifacts:
+    paths:
+      - ./public  
 
 deploy to produbction tests:
   stage: production-tests
