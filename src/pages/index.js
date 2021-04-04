@@ -147,6 +147,9 @@ const IndexPage = () => {
       <p style={paragraphStyles}>
         I am Alex from Brazil, a crazy country
       </p>
+      <p style={paragraphStyles}>
+        This static website is in a bucket
+      </p>
       <div>Pipeline Version: %%VERSION%%</div>
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.js</code> to see this page

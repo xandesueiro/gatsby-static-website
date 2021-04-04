@@ -3,7 +3,7 @@ image: node
 stages:
   - build
   - test
-  - deploy-staging
+  - deploy-preprod
   - deploy-production
   - production-tests
 
@@ -13,7 +13,7 @@ cache:
     - node_modules/
 
 variables:
-  STAGING_DOMAIN: xande755-staging.surge.sh
+  PREPROD_DOMAIN: xande755-preprod.surge.sh
   PRODUCTION_DOMAIN: xande755.surge.sh
 
 build website:
@@ -44,16 +44,16 @@ test website:
     - sleep 10
     - curl "http://localhost:9000" | tac | tac | grep -q "Gatsby"
 
-deploy staging: 
-  stage: deploy-staging
+deploy pre production: 
+  stage: deploy-preprod
   environment:
-    name: staging
-    url: https://$STAGING_DOMAIN
+    name: preprod
+    url: https://$PREPROD_DOMAIN
   only:
     - master
   script:
     - npm install --global surge
-    - surge --project ./public --domain $STAGING_DOMAIN
+    - surge --project ./public --domain $PREPROD_DOMAIN
 
 deploy to production: 
   stage: deploy-production
