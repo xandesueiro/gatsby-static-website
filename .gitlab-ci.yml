@@ -50,7 +50,7 @@ deploy pre production:
     name: preprod
     url: https://$PREPROD_DOMAIN
   only:
-    - master
+    - merge_requests
   script:
     - npm install --global surge
     - surge --project ./public --domain $PREPROD_DOMAIN
