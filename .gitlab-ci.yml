@@ -52,6 +52,9 @@ deploy pre production:
   only:
     - merge_requests
   script:
+    - npm install
+    - npm install -g gatsby-cli
+    - gatsby build
     - npm install --global surge
     - surge --project ./public --domain $PREPROD_DOMAIN
   artifacts:
