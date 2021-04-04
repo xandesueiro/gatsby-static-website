@@ -14,7 +14,8 @@ cache:
 
 variables:
   PREPROD_DOMAIN: xande755-preprod.surge.sh
-  PRODUCTION_DOMAIN: xande755.surge.sh
+  PRODUCTION_DOMAIN: http://trilhasaberlabs-gatsby.s3-website-us-east-1.amazonaws.com/
+  PRODUCTION_BUCKET: trilhasaberlabs-gatsby
 
 build website:
   stage: build
@@ -63,22 +64,27 @@ deploy pre production:
 
 deploy to production: 
   stage: deploy-production
+  image: python:3.8
+  dependencies:
+    - build website
   environment:
     name: production
-    url: https://$PRODUCTION_DOMAIN
   only:
     - master    
   when: manual
   allow_failure: false
+  before_script:
+    - pip3 install awscli --upgrade  
   script:
-    - npm install --global surge
-    - surge --project ./public --domain $PRODUCTION_DOMAIN
+    - npm i gatsby-plugin-s3
+    - npm run build
+    - npm run deploy
 
 deploy to produbction tests:
   stage: production-tests
   only:
     - master  
   script:
-    - curl "https://xande755.surge.sh" | tac | tac | grep -q "Alex"
-    - curl -s "https://xande755.surge.sh" | grep -q "$CI_COMMIT_SHORT_SHA"
+    - curl "http://trilhasaberlabs-gatsby.s3-website-us-east-1.amazonaws.com" | tac | tac | grep -q "Alex"
+    - curl -s "http://trilhasaberlabs-gatsby.s3-website-us-east-1.amazonaws.com" | grep -q "$CI_COMMIT_SHORT_SHA"
   cache: {}
