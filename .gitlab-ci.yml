@@ -76,8 +76,10 @@ deploy to production:
   before_script:
     - apt-get -qq update
     - pip3 install awscli --upgrade  
+    - touch ~/.bash_profile
     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-    - export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" - [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    - source ~/.nvm/nvm.sh
+    - nvm --version
     - nvm install node
     - node -v
     - apt-get -y install npm
