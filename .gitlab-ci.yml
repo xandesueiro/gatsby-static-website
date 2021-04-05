@@ -76,8 +76,13 @@ deploy to production:
   before_script:
     - apt-get -qq update
     - pip3 install awscli --upgrade  
-    - apt-get -y install nodejs npm
+    - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+    - nvm -v
+    - nvm install node
     - node -v
+    - apt-get -y install npm
+    - npm -v
+    - npm install -g npm@latest
     - npm -v
   script:
     - npm install

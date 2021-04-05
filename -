@@ -1,0 +1,46 @@
+[33md01faa8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mgitlab/master[m[33m, [m[1;31mgitlab/develop[m[33m, [m[1;32mdevelop[m[33m)[m nodejs+npm in python image
+[33ma99346c[m[33m ([m[1;31morigin/master[m[33m)[m adjusting deploy prod - installing npm
+[33m6bc215c[m deploy static website in S3 bucket using pipeline
+[33mebe8fd9[m adjusting preprod job-include other npm installs
+[33m34ddafa[m including artifacts in preprod job
+[33m070808e[m pre prod only in merge requests
+[33m809a3d6[m modifying script pipeline
+[33me80fd89[m deploy site in S3 AWS
+[33m9eafdb1[m remove definitely deploy review job
+[33mb9821cd[m including deploy review - again
+[33m74e3cbb[m testing merge request from develop branch - v2
+[33m2276c4d[m any text for testing
+[33ma3f385b[m[33m ([m[1;31morigin/develop[m[33m)[m testing merge request from develop branch - v2
+[33m513ee72[m fix file v2
+[33med64168[m fix file
+[33mdd39a8c[m print variables in staging job
+[33mc7caff0[m removing temporally job deploy review
+[33mbd97dde[m removing temporally job deploy review
+[33m20e8e98[m merging the project
+[33m050e53c[m expanding variables
+[33m00e3c3c[m merging the project
+[33m4b32041[m Merge branch 'master' of gitlab.com:lvx.xande/gatsby-static-website
+[33me62fdac[m expanding variables
+[33m8d47cc2[m Update src/pages/index.js
+[33m9128938[m create new branch - develop
+[33mfae4b8b[m manual approve of production pipeline
+[33ma282d46[m working with variables - domain
+[33m90a4576[m work with staging pipeline
+[33m1c6014a[m adjusting gitignore
+[33m5921c05[m working cache
+[33md626a87[m optimizing with cache and working with variables
+[33m7f7957d[m removing alpine image - deployment tests - no solution yet
+[33m634f5af[m adding alpine image - deployment tests - yml invalid
+[33m635d1ce[m removing alpine image - errordeployment tests
+[33m34f0a0b[m adding deploy test - docker alpine image - installing package curl
+[33med29d4e[m adding deploy test - docker alpine image - installing package curl
+[33m7647479[m adding deploy test - docker alpine image - installing package curl
+[33ma40eb7e[m adding deploy test - docker alpine image
+[33m4d0d404[m adding deploy test
+[33m9be6941[m correcting unique domain surge - final 2
+[33md2d9201[m alterando e testando esteira
+[33maf63d2e[m correcao arquivo gitlab-ci.yml
+[33m6f8f091[m criando stage deploy
+[33med74dc4[m testando ajuste pagina - teste dnd surge
+[33me085510[m subindo versao github e gitlab
+[33m02c13d7[m Initial commit from gatsby
