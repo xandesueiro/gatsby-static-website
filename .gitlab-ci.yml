@@ -100,6 +100,6 @@ deploy to produbction tests:
   only:
     - master  
   script:
-    - curl "http://PRODUCTION_DOMAIN" | tac | tac | grep -q "Alex"
-    - curl -s "http://PRODUCTION_DOMAIN" | grep -q "$CI_COMMIT_SHORT_SHA"
+    - curl "http://$PRODUCTION_DOMAIN" | tac | tac | grep -q "Alex"
+    - curl -s "http://$PRODUCTION_DOMAIN" | grep -q "$CI_COMMIT_SHORT_SHA"
   cache: {}
