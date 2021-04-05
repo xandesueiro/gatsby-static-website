@@ -74,7 +74,11 @@ deploy to production:
   when: manual
   allow_failure: false
   before_script:
+    - apt-get -qq update
     - pip3 install awscli --upgrade  
+    - apt-get -y install nodejs npm
+    - node -v
+    - npm -v
   script:
     - npm install
     - npm i gatsby-plugin-s3
