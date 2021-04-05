@@ -14,8 +14,7 @@ cache:
 
 variables:
   PREPROD_DOMAIN: xande755-preprod.surge.sh
-  PRODUCTION_DOMAIN: http://trilhasaberlabs-gatsby.s3-website-us-east-1.amazonaws.com/
-  PRODUCTION_BUCKET: trilhasaberlabs-gatsby
+  PRODUCTION_DOMAIN: trilhasaberlabs-gatsby.s3-website-us-east-1.amazonaws.com/
 
 build website:
   stage: build
@@ -90,6 +89,7 @@ deploy to production:
     - npm install
     - npm i gatsby-plugin-s3
     - npm run build
+    - sed -i "s/%%VERSION%%/$CI_COMMIT_SHORT_SHA/" ./public/index.html
     - npm run deploy
   artifacts:
     paths:
@@ -100,6 +100,6 @@ deploy to produbction tests:
   only:
     - master  
   script:
-    - curl "http://trilhasaberlabs-gatsby.s3-website-us-east-1.amazonaws.com" | tac | tac | grep -q "Alex"
-    - curl -s "http://trilhasaberlabs-gatsby.s3-website-us-east-1.amazonaws.com" | grep -q "$CI_COMMIT_SHORT_SHA"
+    - curl "http://PRODUCTION_DOMAIN" | tac | tac | grep -q "Alex"
+    - curl -s "http://PRODUCTION_DOMAIN" | grep -q "$CI_COMMIT_SHORT_SHA"
   cache: {}

@@ -148,7 +148,7 @@ const IndexPage = () => {
         I am Alex from Brazil, a crazy country
       </p>
       <p style={paragraphStyles}>
-        This static website is in a bucket
+        This static website is in a bucket and published automatically from a Gitlab pipeline 
       </p>
       <div>Pipeline Version: %%VERSION%%</div>
       <p style={paragraphStyles}>
