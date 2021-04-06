@@ -142,7 +142,7 @@ const IndexPage = () => {
         </span>
       </h1>
       <h2 style={headingStyles}>
-      It's really great! Good work.
+      It's really great! Good work. Editing from Linux!!!
       </h2>
       <p style={paragraphStyles}>
         Training pipeline CI/CD using GITLAB. Any text to test!
